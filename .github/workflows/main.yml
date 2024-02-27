@@ -1,4 +1,4 @@
-name: Hello World
+name: versioning
 
 on:
   push:
@@ -6,12 +6,26 @@ on:
       - main
 
 jobs:
-  hello-world:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Run Hello World script
-      run: echo "Hello, World!"
+      - name: Set up python.py
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
+      - name: Run Hello World script
+        run: echo "Hello, World!"
+
