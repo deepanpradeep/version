@@ -16,7 +16,7 @@ jobs:
       - name: Set up python.py
         uses: actions/setup-python@v2
         with:
-          pyhton-version: '38'
+          pyhton-version: 38
 
       - name: Install dependencies
         run: npm install
