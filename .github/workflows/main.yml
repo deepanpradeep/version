@@ -19,6 +19,7 @@ jobs:
           pyhton-version: 38
 
       - name: Install dependencies
+        run: semantic version
 
       - name: Run semantic-release
         env:
