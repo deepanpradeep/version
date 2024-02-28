@@ -5,7 +5,7 @@ branches: ['main'],
     "@semantic-release/release-notes-generator",
     "@semantic-release/git",{
      "assets":["dist/*.py", "dist/*.py".map"],
-    "
+    "messege": "chore(release): ${NEXTRelease.version} [skip.ci]\n\n{next}
 }],
     "@semantic-release/github"
   ]
