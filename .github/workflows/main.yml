@@ -13,13 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up python.py
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          pyhton-version: 38
+          python-version: 3.8
 
       - name: Install dependencies
-        run: python
+        run: npm install
 
       - name: Run semantic-release
         env:
@@ -28,4 +28,3 @@ jobs:
 
       - name: Run Hello World script
         run: echo "Hello, World!"
-
